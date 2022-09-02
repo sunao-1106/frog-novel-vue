@@ -10,7 +10,15 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: () => import('@/view/Index')
+      redirect: "/index",
+      component: () => import('@/view/Index'),
+      children: [
+        {
+          path: "/index",
+          name: 'IndexContent',
+          component: () => import('@/view/IndexContent')
+        }
+      ]
     }
   ]
 })
