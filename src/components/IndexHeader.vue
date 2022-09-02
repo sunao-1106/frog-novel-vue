@@ -15,13 +15,13 @@
       </el-col>
       <!-- 登录、注册、我的书架 -->
       <el-col :span="5" :offset="18" class="header-link" style="border: 1px blue solid">
-        <el-link class="link-a" href="#" target="_blank">
+        <el-link class="link-a" href="/login" target="_blank">
           <b>登录</b>
         </el-link>
-        <el-link class="link-a" href="#" target="_blank">
+        <el-link class="link-a" href="/reagister" target="_blank">
           <b>注册</b>
         </el-link>
-        <el-link class="link-a" href="#" target="_blank">
+        <el-link class="link-a" href="/bookshelf" target="_blank">
           <i class="el-icon-collection" style="color:#409eff"></i>
           <b>我的书架</b>
         </el-link>
