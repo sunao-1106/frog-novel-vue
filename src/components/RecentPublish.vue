@@ -2,6 +2,7 @@
   <el-row>
     <el-col>
       <b style="font-size:25px">最新更新</b>
+      <hr>
     </el-col>
     <el-col style="border:1px blue solid">
       <table border="1px">
@@ -31,7 +32,7 @@ export default {
       bookList: [
         {
           category: "仙剑奇侠",
-          bookName: "替嫁医妃：王爷起来喝药了",
+          bookName: "替嫁医妃：王爷起来喝药了sssssssssssssssssssss",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
@@ -96,6 +97,10 @@ table > tr > th {
   width: 200px;
 }
 table > tr > td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   width: 200px;
+  font: 13px/31px PingFangSC-Regular,'-apple-system',Simsun;
 }
 </style>

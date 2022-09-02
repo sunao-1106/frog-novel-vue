@@ -2,7 +2,8 @@
   <div>
     <!-- 本月最热 -->
     <el-row>
-        <el-col><b style="font-size:25px">本月点击榜</b></el-col>
+        <el-col><b style="font-size:25px">本月点击榜</b><hr></el-col>
+        
       <el-col style="border:1px red solid">
         <div>
           <table border="1px red">
@@ -96,6 +97,10 @@ table > tr:nth-child(3) > td:nth-child(1) > b {
 table > tr > td:nth-child(1) > b {
   color: grey;
   background-color: #ededed;
+}
+/* 设置书名字体样式 */
+table > tr > td:nth-child(2) {
+ font: 14px/31px PingFangSC-Regular,'-apple-system',Simsun;
 }
 
 </style>

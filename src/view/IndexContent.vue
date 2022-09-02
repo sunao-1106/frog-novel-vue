@@ -10,18 +10,18 @@
         <recommend></recommend>
       </el-col>
       <!-- 精选完本、本周点击榜 -->
-      <el-col class="content-el-col" style="border:1px solid blue;">
+      <el-col class="content-el-col select-and-hot-in-week" style="border:1px solid blue;">
         <el-row>
-          <el-col :span="16" class="selected" style="border:1px solid pink;">
+          <el-col :span="19" class="selected" style="border:1px solid pink;">
             <selected></selected>
           </el-col>
-          <el-col :span="6" class="hot-in-week" :offset="2" style="border:1px solid pink">
+          <el-col :span="5" class="hot-in-week" :offset="0" style="border:1px solid pink">
             <hot-in-week></hot-in-week>
           </el-col>
         </el-row>
       </el-col>
       <!-- 最新发布、本月点击榜 -->
-      <el-col class="content-el-col" style="border:1px solid blue;">
+      <el-col class="content-el-col recent-and-hot-in-month" style="border:1px solid blue;">
         <el-row>
           <el-col :span="17" class="selected" style="border:1px solid pink;">
             <recent-publish></recent-publish>
@@ -67,5 +67,17 @@ export default {
 }
 .selected {
   margin-top: 20px;
+}
+recommend{
+    background-color: white;
+  border-radius: 10px 10px 10px 10px;
+}
+.select-and-hot-in-week {
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+}
+.recent-and-hot-in-month{
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
 }
 </style>
