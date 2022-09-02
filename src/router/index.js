@@ -14,9 +14,28 @@ export default new Router({
       component: () => import('@/view/Index'),
       children: [
         {
+          //首页主体
           path: "/index",
           name: 'IndexContent',
           component: () => import('@/view/IndexContent')
+        },
+        {
+          // 登录
+          path: "/login",
+          name: 'login',
+          component: () => import('@/view/Login')
+        },
+        {
+          //注册
+          path: "/reagister",
+          name: 'reagister',
+          component: () => import('@/view/Reagister')
+        },
+        {
+          //我的书架
+          path: "/bookshelf",
+          name: 'bookshelf',
+          component: () => import('@/view/BookShelf')
         }
       ]
     }
