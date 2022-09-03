@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import MyBookShelf from "../components/MyBookShelf.vue";
+import MyBookShelf from "@/components/MyBookShelf.vue";
 
 export default {
   components: { MyBookShelf },

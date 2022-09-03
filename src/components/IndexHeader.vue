@@ -25,8 +25,8 @@
             <b>注册</b>
           </el-link>
         </router-link>
-        <router-link to="/bookself">
-          <el-link class="link-a" href="/bookshelf" target="_blank">
+        <router-link to="/user/book">
+          <el-link class="link-a" target="_blank">
             <i class="el-icon-collection" style="color:#409eff"></i>
             <b>我的书架</b>
           </el-link>

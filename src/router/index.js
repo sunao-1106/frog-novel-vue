@@ -20,6 +20,29 @@ export default new Router({
           component: () => import('@/view/IndexContent')
         },
         {
+          //用户个人中心
+          path: "/user",
+          name: 'User',
+          redirect: '/user/center/center',
+          component: () => import('@/view/user/Index'),
+          children: [
+            {
+            path: '/user/center',
+            name: 'UserCenter',
+            component: () => import('@/view/user/UserCenter')
+          },{
+            path: '/user/info',
+            name: 'UserInfo',
+            component: () => import('@/view/user/UserInfo')
+          }
+          ,{
+            path: '/user/book',
+            name: 'BookSelf',
+            component: () => import('@/view/user/BookSelf')
+          }
+        ]
+        },
+        {
           // 登录
           path: "/login",
           name: 'login',
@@ -35,19 +58,19 @@ export default new Router({
           //我的书架
           path: "/bookself",
           name: 'bookself',
-          component: () => import('@/view/BookShelf')
+          component: () => import('@/view/book/BookShelf')
         },
         {
           //小说详细页
           path: "/detail",
           name: 'detail',
-          component: () => import('@/view/BookDetail'),
+          component: () => import('@/view/book/BookDetail'),
           redirect: "/chapter",
           children: [
             {
               path: '/chapter',
               name: 'Chapter',
-              component: () => import('@/view/BookChapterList')
+              component: () => import('@/view/book/BookChapterList')
             }
           ]
         }

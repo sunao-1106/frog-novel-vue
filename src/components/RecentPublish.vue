@@ -2,7 +2,7 @@
   <el-row>
     <el-col>
       <b style="font-size:25px">最新更新</b>
-      <hr>
+      <hr />
     </el-col>
     <el-col style="border:1px blue solid">
       <table border="1px">
@@ -37,49 +37,84 @@ export default {
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
           recent: "第三百六十章 强强来了",
           updateTime: "2019-10-09"
         },
-                {
+        {
+          category: "仙剑奇侠",
+          bookName: "替嫁医妃：王爷起来喝药了",
+          author: "强强",
+          recent: "第三百六十章 强强来了",
+          updateTime: "2019-10-09"
+        },
+        {
+          category: "仙剑奇侠",
+          bookName: "替嫁医妃：王爷起来喝药了",
+          author: "强强",
+          recent: "第三百六十章 强强来了",
+          updateTime: "2019-10-09"
+        },
+        {
+          category: "仙剑奇侠",
+          bookName: "替嫁医妃：王爷起来喝药了",
+          author: "强强",
+          recent: "第三百六十章 强强来了",
+          updateTime: "2019-10-09"
+        },
+        {
+          category: "仙剑奇侠",
+          bookName: "替嫁医妃：王爷起来喝药了",
+          author: "强强",
+          recent: "第三百六十章 强强来了",
+          updateTime: "2019-10-09"
+        },
+        {
+          category: "仙剑奇侠",
+          bookName: "替嫁医妃：王爷起来喝药了",
+          author: "强强",
+          recent: "第三百六十章 强强来了",
+          updateTime: "2019-10-09"
+        },
+        {
           category: "仙剑奇侠",
           bookName: "替嫁医妃：王爷起来喝药了",
           author: "强强",
@@ -97,10 +132,10 @@ table > tr > th {
   width: 200px;
 }
 table > tr > td {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   width: 200px;
-  font: 13px/31px PingFangSC-Regular,'-apple-system',Simsun;
+  font: 13px/21px PingFangSC-Regular, "-apple-system", Simsun;
 }
 </style>
