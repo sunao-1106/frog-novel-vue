@@ -27,15 +27,29 @@ export default new Router({
         },
         {
           //注册
-          path: "/reagister",
-          name: 'reagister',
+          path: "/register",
+          name: 'register',
           component: () => import('@/view/Reagister')
         },
         {
           //我的书架
-          path: "/bookshelf",
-          name: 'bookshelf',
+          path: "/bookself",
+          name: 'bookself',
           component: () => import('@/view/BookShelf')
+        },
+        {
+          //小说详细页
+          path: "/detail",
+          name: 'detail',
+          component: () => import('@/view/BookDetail'),
+          redirect: "/chapter",
+          children: [
+            {
+              path: '/chapter',
+              name: 'Chapter',
+              component: () => import('@/view/BookChapterList')
+            }
+          ]
         }
       ]
     }

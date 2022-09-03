@@ -18,7 +18,7 @@
           </el-col>
           <el-col :span="16" style="border: 1px blue solid; height:100px">
             <p class="novel-description">
-              <a href="#" style="text-decoration:none; color:black">替嫁医妃：王爷起来喝药了</a>
+              <a href="/detail" style="text-decoration:none; color:black">替嫁医妃：王爷起来喝药了</a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三

@@ -15,26 +15,34 @@
       </el-col>
       <!-- 登录、注册、我的书架 -->
       <el-col :span="5" :offset="18" class="header-link" style="border: 1px blue solid">
-        <el-link class="link-a" href="/login" target="_blank">
-          <b>登录</b>
-        </el-link>
-        <el-link class="link-a" href="/reagister" target="_blank">
-          <b>注册</b>
-        </el-link>
-        <el-link class="link-a" href="/bookshelf" target="_blank">
-          <i class="el-icon-collection" style="color:#409eff"></i>
-          <b>我的书架</b>
-        </el-link>
+        <router-link to="/login">
+          <el-link class="link-a" href="/login" target="_blank">
+            <b>登录</b>
+          </el-link>
+        </router-link>
+        <router-link to="/register">
+          <el-link class="link-a" href="/reagister" target="_blank">
+            <b>注册</b>
+          </el-link>
+        </router-link>
+        <router-link to="/bookself">
+          <el-link class="link-a" href="/bookshelf" target="_blank">
+            <i class="el-icon-collection" style="color:#409eff"></i>
+            <b>我的书架</b>
+          </el-link>
+        </router-link>
       </el-col>
       <!-- 头部导航栏 -->
       <el-col :span="24" class="header-navigation" style="border: 1px blue solid;">
-          <a href="#">首页</a>
-          <a href="#">全部小说</a>
-          <a href="#">排行榜</a>
-          <a href="#">免费小说</a>
-          <a href="#">完本小说</a>
-          <br>
-          <hr style="border:3px #5ba4e9 solid">
+
+        <a href="/">首页</a>
+
+        <a href="#">全部小说</a>
+        <a href="#">排行榜</a>
+        <a href="#">免费小说</a>
+        <a href="#">完本小说</a>
+        <br />
+        <hr style="border:3px #5ba4e9 solid" />
       </el-col>
     </el-row>
   </div>
@@ -63,11 +71,10 @@ export default {
 .header-navigation > a {
   padding-right: 20px;
   font-size: 15px;
-  text-decoration:none;
+  text-decoration: none;
   color: #000;
 }
 .header-navigation > a:hover {
   background-color: rgb(96, 154, 206);
-
 }
 </style>
