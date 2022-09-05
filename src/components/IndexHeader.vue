@@ -1,9 +1,15 @@
 <template>
   <div>
     <el-row style="border: 1px blue solid">
+      <el-col :span="3" style="border:1px red solid">
+          <el-image
+      style="width: 100px; height: 100px"
+      src="https://img2.baidu.com/it/u=2864572493,3868817951&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400"
+      fit="fit"></el-image>
+      </el-col>
       <!-- 这里的24就相当于20 因为最外面el-col=20 24也就是占满20 -->
       <!-- 搜索框 -->
-      <el-col :span="8" :offset="7" class="search-box" style="border: 1px blue solid">
+      <el-col :span="8" :offset="4" class="search-box" style="border: 1px blue solid">
         <el-form :inline="true">
           <el-form-item>
             <el-input v-model="input" placeholder="请输入内容"></el-input>
@@ -73,6 +79,9 @@ export default {
   font-size: 15px;
   text-decoration: none;
   color: #000;
+}
+.header-navigation {
+  margin-top: 20px;
 }
 .header-navigation > a:hover {
   background-color: rgb(96, 154, 206);

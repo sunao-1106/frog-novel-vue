@@ -12,7 +12,7 @@
       <!-- 精选完本、本周点击榜 -->
       <el-col class="content-el-col select-and-hot-in-week" style="border:1px solid blue;">
         <el-row>
-          <el-col :span="19" class="selected" style="border:1px solid pink;">
+          <el-col :span="18" class="selected" style="border:1px solid pink;">
             <selected></selected>
           </el-col>
           <el-col :span="5" class="hot-in-week" :offset="0" style="border:1px solid pink">
@@ -26,7 +26,7 @@
           <el-col :span="17" class="selected" style="border:1px solid pink;">
             <recent-publish></recent-publish>
           </el-col>
-          <el-col :span="6" class="hot-in-week" :offset="1" style="border:1px solid pink">
+          <el-col :span="5" class="hot-in-week" :offset="1" style="border:1px solid pink">
             <hot-in-month></hot-in-month>
           </el-col>
         </el-row>

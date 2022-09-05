@@ -11,7 +11,7 @@
               <td>
                 <b>1</b>
               </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
+              <td><div>替嫁医妃：王爷起来喝药了sssss</div></td>
             </tr>
             <tr>
               <td>
@@ -103,4 +103,10 @@ table > tr > td:nth-child(2) {
  font: 14px/31px PingFangSC-Regular,'-apple-system',Simsun;
 }
 
+td div {
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 175px;
+}
 </style>

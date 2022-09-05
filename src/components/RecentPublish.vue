@@ -14,11 +14,11 @@
           <th>更新时间</th>
         </tr>
         <tr v-for="(item, index) in bookList" :key="index">
-          <td>{{ item.category }}</td>
-          <td>{{ item.bookName }}</td>
-          <td>{{ item.author }}</td>
-          <td>{{ item.recent }}</td>
-          <td>{{ item.updateTime }}</td>
+           <td><a href=""><div style="width:100px;">{{ item.category }}</div></a></td>
+          <td><a href=""><div style="width:220px;">{{ item.bookName }}</div></a></td>
+          <td><div style="width:70px;">{{ item.author }}</div></td>
+          <td><a href=""><div style="width:210px">{{ item.recent }}</div></a></td>
+          <td><div style="width:80px">{{ item.updateTime }}</div></td>
         </tr>
       </table>
     </el-col>
@@ -31,10 +31,10 @@ export default {
     return {
       bookList: [
         {
-          category: "仙剑奇侠",
+          category: "[仙剑奇侠测试ss]",
           bookName: "替嫁医妃：王爷起来喝药了sssssssssssssssssssss",
-          author: "强强",
-          recent: "第三百六十章 强强来了",
+          author: "强强sssssssss",
+          recent: "第三百六十章 强强来了sssssssssssssssssssssss",
           updateTime: "2019-10-09"
         },
         {
@@ -131,11 +131,23 @@ export default {
 table > tr > th {
   width: 200px;
 }
+
 table > tr > td {
+  width: 200px;
+  font: 13px/21px PingFangSC-Regular, "-apple-system", Simsun;
+}
+
+table div {
+  border: 1px solid red;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 200px;
-  font: 13px/21px PingFangSC-Regular, "-apple-system", Simsun;
+}
+table a {
+  color:black;
+  text-decoration: none;
+}
+td a:hover {
+  color: #5ba4e9;
 }
 </style>
