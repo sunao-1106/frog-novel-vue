@@ -20,6 +20,12 @@ export default new Router({
           component: () => import('@/view/IndexContent')
         },
         {
+          //全部小说
+          path: "/all",
+          name: 'AllBooks',
+          component: () => import('@/view/allBooks/Index')
+        },
+        {
           //用户个人中心
           path: "/user",
           name: 'User',
@@ -27,20 +33,20 @@ export default new Router({
           component: () => import('@/view/user/Index'),
           children: [
             {
-            path: '/user/center',
-            name: 'UserCenter',
-            component: () => import('@/view/user/UserCenter')
-          },{
-            path: '/user/info',
-            name: 'UserInfo',
-            component: () => import('@/view/user/UserInfo')
-          }
-          ,{
-            path: '/user/book',
-            name: 'BookSelf',
-            component: () => import('@/view/user/BookSelf')
-          }
-        ]
+              path: '/user/center',
+              name: 'UserCenter',
+              component: () => import('@/view/user/UserCenter')
+            }, {
+              path: '/user/info',
+              name: 'UserInfo',
+              component: () => import('@/view/user/UserInfo')
+            }
+            , {
+              path: '/user/book',
+              name: 'BookSelf',
+              component: () => import('@/view/user/BookSelf')
+            }
+          ]
         },
         {
           // 登录
@@ -54,18 +60,18 @@ export default new Router({
           name: 'register',
           component: () => import('@/view/Reagister')
         },
-        
+
         {
           //小说详细页
           path: "/detail",
           name: 'detail',
-          component: () => import('@/view/book/BookDetail'),
+          component: () => import('@/view/bookDetail/BookDetail'),
           redirect: "/chapter",
           children: [
             {
               path: '/chapter',
               name: 'Chapter',
-              component: () => import('@/view/book/BookChapterList')
+              component: () => import('@/view/bookDetail/BookChapterList')
             }
           ]
         }
