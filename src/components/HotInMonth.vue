@@ -2,11 +2,11 @@
   <div>
     <!-- 本月最热 -->
     <el-row>
-        <el-col><b style="font-size:25px">本月点击榜</b><hr></el-col>
-        
-      <el-col style="border:1px red solid">
+        <el-col style="margin:0px 0px 10px 0px"><b style="font-size:25px">本月点击榜</b></el-col>
+        <hr>
+      <el-col>
         <div>
-          <table border="1px red">
+          <table>
             <tr>
               <td>
                 <b>1</b>

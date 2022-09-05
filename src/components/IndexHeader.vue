@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-row style="border: 1px blue solid">
-      <el-col :span="3" style="border:1px red solid">
+    <el-row>
+      <el-col :span="3">
           <el-image
       style="width: 100px; height: 100px"
       src="https://img2.baidu.com/it/u=2864572493,3868817951&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400"
@@ -9,7 +9,7 @@
       </el-col>
       <!-- 这里的24就相当于20 因为最外面el-col=20 24也就是占满20 -->
       <!-- 搜索框 -->
-      <el-col :span="8" :offset="4" class="search-box" style="border: 1px blue solid">
+      <el-col :span="8" :offset="4" class="search-box">
         <el-form :inline="true">
           <el-form-item>
             <el-input v-model="input" placeholder="请输入内容"></el-input>
@@ -20,7 +20,7 @@
         </el-form>
       </el-col>
       <!-- 登录、注册、我的书架 -->
-      <el-col :span="5" :offset="18" class="header-link" style="border: 1px blue solid">
+      <el-col :span="5" :offset="18" class="header-link">
         <router-link to="/login">
           <el-link class="link-a" href="/login" target="_blank">
             <b>登录</b>
@@ -39,7 +39,7 @@
         </router-link>
       </el-col>
       <!-- 头部导航栏 -->
-      <el-col :span="24" class="header-navigation" style="border: 1px blue solid;">
+      <el-col :span="24" class="header-navigation">
 
         <a href="/">首页</a>
 

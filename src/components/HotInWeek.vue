@@ -2,16 +2,20 @@
   <div>
     <!-- 本周最热 -->
     <el-row>
-        <el-col><b style="font-size:25px">本周点击榜</b>  <hr></el-col>
-      
-      <el-col style="border:1px red solid">
+      <el-col style="margin:0px 0px 10px 0px">
+        <b style="font-size:25px">本周点击榜</b>
+      </el-col>
+      <hr />
+      <el-col>
         <div>
-          <table border="1px red">
+          <table>
             <tr>
               <td>
                 <b>1</b>
               </td>
-              <td><div>替嫁医妃：王爷起来喝药了sssss</div></td>
+              <td>
+                <div>替嫁医妃：王爷起来喝药了sssss</div>
+              </td>
             </tr>
             <tr>
               <td>
@@ -75,9 +79,7 @@
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style scoped>
@@ -100,13 +102,13 @@ table > tr > td:nth-child(1) > b {
 }
 /* 设置书名字体样式 */
 table > tr > td:nth-child(2) {
- font: 14px/31px PingFangSC-Regular,'-apple-system',Simsun;
+  font: 14px/31px PingFangSC-Regular, "-apple-system", Simsun;
 }
 
 td div {
-    overflow: hidden;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-   width: 175px;
+  width: 175px;
 }
 </style>

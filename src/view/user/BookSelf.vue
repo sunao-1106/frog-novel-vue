@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="book-self">
         <el-row>
             <el-col>
                 <div class="bookself">
                     <span style="font-size:20px;">我的书架</span>
                     <hr>
-                <table class="bookself-table" border="1px">
+                <table class="bookself-table" style="border-collapse:collapse">
                     <tr>
                         <td style="width:90px;color: black">类别</td>
                         <td style="width:130px;color: black">书名 </td>
@@ -25,7 +25,7 @@
                 </div>
             </el-col>
 
-            <el-col :offset="6">
+            <el-col :offset="6" class="pagination">
                    <el-pagination
     layout="prev, pager, next"
     :total="50">
@@ -133,13 +133,20 @@ export default {
 
 <style scoped>
 .bookself-table td {
-  font: 15px/18px PingFangSC-Regular, "-apple-system", Simsun;
+  font: 15px/21px PingFangSC-Regular, "-apple-system", Simsun;
   color: #727377;
 }
 .bookself {
   margin-top: 10px;
 }
 .bookself-table > tr:first-child {
-  background: #8fbeeb;
+  background: #ededed;
+}
+.book-self {
+  margin: auto;
+  width: 600px;
+}
+.pagination {
+  margin-top: 10px;
 }
 </style>

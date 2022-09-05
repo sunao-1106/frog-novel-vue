@@ -2,13 +2,13 @@
   <div>
     <!-- 猜你喜欢 -->
     <el-row>
-      <el-col>
-        <b style="font-size:25px">猜你喜欢</b>
+      <el-col style="margin:15px 0px 10px 10px">
+        <b style="font-size:25px;">猜你喜欢</b>
       </el-col>
       <hr />
-      <el-col :span="7" class="book-item" style="border:1px green solid">
+      <el-col :span="7" class="book-item">
         <el-row>
-          <el-col :span="6" style="border: 1px blue solid">
+          <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
@@ -16,9 +16,11 @@
               fit="fit"
             ></el-image>
           </el-col>
-          <el-col :span="16" style="border: 1px blue solid; height:100px">
+          <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black"><div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div></a>
+              <a href="/detail" style="text-decoration:none; color:black">
+                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+              </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三
@@ -27,9 +29,9 @@
           </el-col>
         </el-row>
       </el-col>
-            <el-col :span="7" class="book-item" style="border:1px green solid">
+           <el-col :span="7" class="book-item">
         <el-row>
-          <el-col :span="6" style="border: 1px blue solid">
+          <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
@@ -37,9 +39,11 @@
               fit="fit"
             ></el-image>
           </el-col>
-          <el-col :span="16" style="border: 1px blue solid; height:100px">
+          <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black"><div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div></a>
+              <a href="/detail" style="text-decoration:none; color:black">
+                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+              </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三
@@ -48,9 +52,9 @@
           </el-col>
         </el-row>
       </el-col>
-            <el-col :span="7" class="book-item" style="border:1px green solid">
+           <el-col :span="7" class="book-item">
         <el-row>
-          <el-col :span="6" style="border: 1px blue solid">
+          <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
@@ -58,9 +62,11 @@
               fit="fit"
             ></el-image>
           </el-col>
-          <el-col :span="16" style="border: 1px blue solid; height:100px">
+          <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black"><div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div></a>
+              <a href="/detail" style="text-decoration:none; color:black">
+                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+              </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三
@@ -69,9 +75,9 @@
           </el-col>
         </el-row>
       </el-col>
-            <el-col :span="7" class="book-item" style="border:1px green solid">
+           <el-col :span="7" class="book-item">
         <el-row>
-          <el-col :span="6" style="border: 1px blue solid">
+          <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
@@ -79,9 +85,11 @@
               fit="fit"
             ></el-image>
           </el-col>
-          <el-col :span="16" style="border: 1px blue solid; height:100px">
+          <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black"><div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div></a>
+              <a href="/detail" style="text-decoration:none; color:black">
+                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+              </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三
@@ -90,9 +98,9 @@
           </el-col>
         </el-row>
       </el-col>
-            <el-col :span="7" class="book-item" style="border:1px green solid">
+           <el-col :span="7" class="book-item">
         <el-row>
-          <el-col :span="6" style="border: 1px blue solid">
+          <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
@@ -100,9 +108,11 @@
               fit="fit"
             ></el-image>
           </el-col>
-          <el-col :span="16" style="border: 1px blue solid; height:100px">
+          <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black"><div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div></a>
+              <a href="/detail" style="text-decoration:none; color:black">
+                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+              </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三
@@ -111,9 +121,9 @@
           </el-col>
         </el-row>
       </el-col>
-            <el-col :span="7" class="book-item" style="border:1px green solid">
+           <el-col :span="7" class="book-item">
         <el-row>
-          <el-col :span="6" style="border: 1px blue solid">
+          <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
@@ -121,9 +131,11 @@
               fit="fit"
             ></el-image>
           </el-col>
-          <el-col :span="16" style="border: 1px blue solid; height:100px">
+          <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black"><div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div></a>
+              <a href="/detail" style="text-decoration:none; color:black">
+                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+              </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
               <i class="el-icon-user"></i>：张三
@@ -147,12 +159,12 @@ export default {};
   line-height: 1;
 }
 .book-item {
-  margin-top: 10px;
+  margin-bottom: 20px;
   margin-left: 30px;
 }
 .novel-image {
   /* 水平 垂直 模糊距离 */
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); 
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 /* 多行超出部分显示... */
 .hidden-if-beyond {
@@ -162,14 +174,12 @@ export default {};
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  border: 1px solid peru;
   font: 10px/15px PingFangSC-Regular, "-apple-system", Simsun;
 }
 .novel-name {
-    overflow: hidden;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 200px;
-  
 }
 </style>

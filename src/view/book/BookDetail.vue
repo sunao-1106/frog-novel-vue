@@ -1,43 +1,60 @@
 <template>
-    <div>
+  <div>
+    <el-row>
+      <!-- 小说详细信息卡片 -->
+      <el-col :span="22" :offset="1" class="book-detail-info" style="height:340px">
+        <book-detail-info></book-detail-info>
+      </el-col>
+      <!-- 小说讨论区、小说章节目录 -->
+      <el-col :span="22" :offset="1" class="comment-and-chapter">
         <el-row>
-            <!-- 小说详细信息卡片 -->
-            <el-col :span="22" :offset="1" class="book-detail-info" style="border:1px solid blue;height:340px">
-                <book-detail-info></book-detail-info>
-            </el-col>
-            <!-- 小说讨论区、小说章节目录 -->
-            <el-col :span="22" :offset="1" class="comment-and-chapter" style="border:1px solid blue;">
-                <el-row>
-                    <el-col style="border:1px red solid;font-size:20px" :span="3">
-                        <a>小说讨论区</a>
-                    </el-col>
-                    <el-col style="border:1px red solid;font-size:20px" :offset="1" :span="4">
-                         <a>小说章节目录</a>
-                    </el-col>
-                    <el-col style="border:1px red solid;">
-                        <router-view/>
-                    </el-col>
-                </el-row>
-                <hr>
-            </el-col>
+          <el-col>
+            <el-menu
+              :default-active="activeIndex"
+              class="el-menu-demo"
+              mode="horizontal"
+              @select="handleSelect"
+              style="border-radius: 10px 10px 0px 0px;"
+            >
+              <el-menu-item index="1">小说讨论区</el-menu-item>
+              <el-menu-item index="2">小说目录章节</el-menu-item>
+            </el-menu>
+          </el-col>
+          <el-col>
+            <router-view />
+          </el-col>
         </el-row>
-    </div>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
-import BookDetailInfo from '@/components/BookDetailInfo'
+import BookDetailInfo from "@/components/BookDetailInfo";
 export default {
-    components: { BookDetailInfo }
-}
+    data() {
+        return {
+            activeIndex: "1"
+        }
+    },
+  components: { BookDetailInfo },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
+};
 </script>
 
 <style scoped>
 .book-detail-info {
-    background-color: white;
-    border-radius: 10px 10px 10px 10px;
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 30px;
 }
 .comment-and-chapter {
-    background-color: white;
-    margin-top: 30px;
+  background-color: white;
+  margin-top: 25px;
+  border-radius: 10px 10px 10px 10px;
 }
 </style>

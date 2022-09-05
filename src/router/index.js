@@ -54,12 +54,7 @@ export default new Router({
           name: 'register',
           component: () => import('@/view/Reagister')
         },
-        {
-          //我的书架
-          path: "/bookself",
-          name: 'bookself',
-          component: () => import('@/view/book/BookShelf')
-        },
+        
         {
           //小说详细页
           path: "/detail",

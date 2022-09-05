@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="user-center">
     <el-row>
-      <el-col :span="4" style="border:1px solid red">
+      <el-col :span="4">
         <el-avatar
           :size="80"
           src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
         ></el-avatar>
       </el-col>
-      <el-col :span="9" style="border:1px solid red">
+      <el-col :span="9">
         <div>
           <span>
             <p>小孙</p>
@@ -27,7 +27,7 @@
         <div class="read-history">
           <span style="font-size:20px;">浏览历史</span>
           <hr />
-          <table class="read-history-table" border="1px">
+          <table class="read-history-table" style="border-collapse:collapse">
             <tr>
               <td style="width:90px;color: black">类别</td>
               <td style="width:130px;color: black">书名</td>
@@ -55,7 +55,7 @@
         </div>
       </el-col>
 
-      <el-col :offset="6">
+      <el-col :offset="6" class="pagination">
         <el-pagination layout="prev, pager, next" :total="50"></el-pagination>
       </el-col>
     </el-row>
@@ -141,13 +141,20 @@ export default {
 
 <style scoped>
 .read-history-table td {
-  font: 15px/18px PingFangSC-Regular, "-apple-system", Simsun;
+  font: 15px/21px PingFangSC-Regular, "-apple-system", Simsun;
   color: #727377;
 }
 .read-history {
   margin-top: 10px;
 }
 .read-history-table > tr:first-child {
-  background: #8fbeeb;
+  background: #ededed;
+}
+.user-center {
+  margin: auto;
+  width: 600px;
+}
+.pagination {
+  margin-top: 10px;
 }
 </style>

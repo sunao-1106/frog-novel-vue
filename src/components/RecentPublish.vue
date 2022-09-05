@@ -1,17 +1,17 @@
 <template>
   <el-row>
-    <el-col>
+    <el-col style="margin:0px 0px 10px 10px">
       <b style="font-size:25px">最新更新</b>
-      <hr />
     </el-col>
-    <el-col style="border:1px blue solid">
-      <table border="1px">
+          <hr />
+    <el-col>
+      <table style="border-collapse:collapse;margin:0px 0px 10px 10px">
         <tr>
-          <th>类别</th>
-          <th>书名</th>
-          <th>作者</th>
-          <th>最新章节</th>
-          <th>更新时间</th>
+          <td style="font-size:15px">类别</td>
+          <td style="font-size:15px">书名</td>
+          <td style="font-size:15px">作者</td>
+          <td style="font-size:15px">最新章节</td>
+          <td style="font-size:15px">更新时间</td>
         </tr>
         <tr v-for="(item, index) in bookList" :key="index">
            <td><a href=""><div style="width:100px;">{{ item.category }}</div></a></td>
@@ -128,17 +128,14 @@ export default {
 </script>
 
 <style scoped>
-table > tr > th {
-  width: 200px;
-}
-
 table > tr > td {
   width: 200px;
-  font: 13px/21px PingFangSC-Regular, "-apple-system", Simsun;
+  font: 14px/25px PingFangSC-Regular, "-apple-system", Simsun;
 }
-
+table > tr:first-child {
+  background-color: #ededed;
+}
 table div {
-  border: 1px solid red;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="user"> 
     <el-row>
         <!-- 菜单栏 -->
-      <el-col :span="5" style="border:1px solid red">
+      <el-col :span="5">
         <el-menu
           :default-active="activeIndex"
           class="el-menu-demo"
@@ -21,7 +21,7 @@
         </el-menu>
       </el-col>
       <!-- 菜单栏页面视图 -->
-      <el-col :span="14" :offset="1" class="menu-view" style="border:1px solid blue">
+      <el-col :span="14" :offset="1" class="menu-view" style="height:490px;width:700px">
             <router-view></router-view>
       </el-col>
     </el-row>
@@ -46,5 +46,8 @@ export default {
 .menu-view {
   background-color: white;
   border-radius: 10px 10px 10px 10px;
+}
+.user {
+  margin-top: 20px;
 }
 </style>

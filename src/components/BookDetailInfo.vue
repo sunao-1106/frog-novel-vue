@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="book-detail">
     <el-row>
       <!-- 小说封面图片 -->
-      <el-col :span="5" class="noval-image" style="border:1px solid green">
-        <el-image style="width: 180px; height: 245px" src="https://bookcover.yuewen.com/qdbimg/349573/c_22109307301720304/180" fit="fit"></el-image>
+      <el-col :span="5" class="noval-image">
+        <el-image style="width: 180px; height: 245px;  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);" src="https://bookcover.yuewen.com/qdbimg/349573/c_22109307301720304/180" fit="fit"></el-image>
       </el-col>
       <!-- 小说信息 -->
-      <el-col :span="9" class="novel-description" style="border:1px solid green;height:250px">
+      <el-col :span="9" class="novel-description" style="height:250px">
         <h2>重生后，摄政王他不肯退婚</h2>
         <el-tag size="mini">标签一</el-tag>
         <el-tag type="success" size="mini">标签二</el-tag>
@@ -54,7 +54,6 @@ export default {};
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
-  border: 1px solid peru;
   font: 14px/21px PingFangSC-Regular, "-apple-system", Simsun;
 }
 .novel-description > p,
@@ -70,5 +69,7 @@ h2 {
 .noval-image {
   margin-top: 20px;
   margin-left: 20px;
+  
 }
+
 </style>
