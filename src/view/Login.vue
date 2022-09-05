@@ -11,7 +11,7 @@
       "
     >
       <div style="margin: 20px 0; text-align: center; font-size: 24px">
-        <b>登录</b>
+        <b>青蛙小说</b>
       </div>
 
       <el-form :rules="rules" :model="user" ref="userForm">
@@ -34,21 +34,24 @@
           ></el-input>
         </el-form-item>
 
-        <el-form-item style="margin: 10px 0; text-align: right">
-          <el-switch
-            v-model="value1"
-            active-text="记住密码"
-          >
-          <!--  inactive-text="无需记住" -->
-          </el-switch>
-          <el-button
-            type="primary"
-            size="small"
-            autocomplete="off"
-            @click="login"
-            >登录</el-button
-          >
-        </el-form-item>
+        <el-row :gutter="20">
+          <el-col :span="7">
+            <el-button
+              type="primary"
+              size="small"
+              autocomplete="off"
+              @click="login"
+              >登录</el-button
+            >
+          </el-col>
+          <el-col :span="7" :offset="10">
+            <el-switch v-model="value1" inactive-text="记住密码">
+              <!-- active-text="记住密码" -->
+            </el-switch>
+          </el-col>
+        </el-row>
+
+        <el-form-item> </el-form-item>
       </el-form>
     </div>
   </div>
@@ -99,4 +102,5 @@ export default {
   background-image: linear-gradient(to bottom right, #f6f6f6, #f9f9f9);
   overflow: hidden;
 }
+
 </style>

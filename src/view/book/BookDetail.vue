@@ -21,7 +21,7 @@
             </el-menu>
           </el-col>
           <el-col>
-            <router-view />
+             <comment />
           </el-col>
         </el-row>
       </el-col>
@@ -31,13 +31,16 @@
 
 <script>
 import BookDetailInfo from "@/components/BookDetailInfo";
+import Comment from './Comment.vue'
 export default {
     data() {
+
         return {
             activeIndex: "1"
         }
     },
-  components: { BookDetailInfo },
+  components: { BookDetailInfo,
+          Comment },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
