@@ -31,11 +31,7 @@
 
 <script>
 import BookDetailInfo from "@/components/BookDetailInfo";
-<<<<<<< HEAD:src/view/book/BookDetail.vue
-import Comment from './Comment.vue'
-=======
 import Comment from '@/view/bookDetail/Comment'
->>>>>>> 0098e52aafebf4a07f8bba5b5fad905e88b064c9:src/view/bookDetail/BookDetail.vue
 export default {
     data() {
 
