@@ -98,7 +98,7 @@ export default {
 
                                     localStorage.setItem("user",JSON.stringify(res.data))  //存储用户信息到浏览器
 
-                                    this.$router.push("/home")
+                                    this.$router.push("/index")
                                     this.$message.success("登录成功")
                                 }else {
                                     this.$message.error(res.msg)
