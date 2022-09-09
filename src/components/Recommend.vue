@@ -6,141 +6,27 @@
         <b style="font-size:25px;">猜你喜欢</b>
       </el-col>
       <hr />
-      <el-col :span="7" class="book-item">
+      <el-col :span="7" class="book-item" v-for="(item, index) in bookList" :key="index">
         <el-row>
           <el-col :span="6">
             <el-image
               class="novel-image"
               style="width: 72px; height: 96px"
-              src="https://bookcover.yuewen.com/qdbimg/349573/c_22139735609273504/90"
+              :src="item.image"
               fit="fit"
             ></el-image>
           </el-col>
           <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
               <a href="/detail" style="text-decoration:none; color:black">
-                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
+                <div class="novel-name">{{ item.bookName }}</div>
               </a>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：张三
+              <i class="el-icon-user"></i>
+              ：{{ item.authorName }}
             </p>
-            <div class="hidden-if-beyond">傅平安是个平凡的老百姓，但他的人生从十八岁那年起就变得传奇起来，风雨过后见彩虹，好人都一生平安。ssssss</div>
-          </el-col>
-        </el-row>
-      </el-col>
-           <el-col :span="7" class="book-item">
-        <el-row>
-          <el-col :span="6">
-            <el-image
-              class="novel-image"
-              style="width: 72px; height: 96px"
-              src="https://bookcover.yuewen.com/qdbimg/349573/c_22139735609273504/90"
-              fit="fit"
-            ></el-image>
-          </el-col>
-          <el-col :span="16" :offset="1" style="height:100px">
-            <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black">
-                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
-              </a>
-            </p>
-            <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：张三
-            </p>
-            <div class="hidden-if-beyond">傅平安是个平凡的老百姓，但他的人生从十八岁那年起就变得传奇起来，风雨过后见彩虹，好人都一生平安。ssssss</div>
-          </el-col>
-        </el-row>
-      </el-col>
-           <el-col :span="7" class="book-item">
-        <el-row>
-          <el-col :span="6">
-            <el-image
-              class="novel-image"
-              style="width: 72px; height: 96px"
-              src="https://bookcover.yuewen.com/qdbimg/349573/c_22139735609273504/90"
-              fit="fit"
-            ></el-image>
-          </el-col>
-          <el-col :span="16" :offset="1" style="height:100px">
-            <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black">
-                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
-              </a>
-            </p>
-            <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：张三
-            </p>
-            <div class="hidden-if-beyond">傅平安是个平凡的老百姓，但他的人生从十八岁那年起就变得传奇起来，风雨过后见彩虹，好人都一生平安。ssssss</div>
-          </el-col>
-        </el-row>
-      </el-col>
-           <el-col :span="7" class="book-item">
-        <el-row>
-          <el-col :span="6">
-            <el-image
-              class="novel-image"
-              style="width: 72px; height: 96px"
-              src="https://bookcover.yuewen.com/qdbimg/349573/c_22139735609273504/90"
-              fit="fit"
-            ></el-image>
-          </el-col>
-          <el-col :span="16" :offset="1" style="height:100px">
-            <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black">
-                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
-              </a>
-            </p>
-            <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：张三
-            </p>
-            <div class="hidden-if-beyond">傅平安是个平凡的老百姓，但他的人生从十八岁那年起就变得传奇起来，风雨过后见彩虹，好人都一生平安。ssssss</div>
-          </el-col>
-        </el-row>
-      </el-col>
-           <el-col :span="7" class="book-item">
-        <el-row>
-          <el-col :span="6">
-            <el-image
-              class="novel-image"
-              style="width: 72px; height: 96px"
-              src="https://bookcover.yuewen.com/qdbimg/349573/c_22139735609273504/90"
-              fit="fit"
-            ></el-image>
-          </el-col>
-          <el-col :span="16" :offset="1" style="height:100px">
-            <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black">
-                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
-              </a>
-            </p>
-            <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：张三
-            </p>
-            <div class="hidden-if-beyond">傅平安是个平凡的老百姓，但他的人生从十八岁那年起就变得传奇起来，风雨过后见彩虹，好人都一生平安。ssssss</div>
-          </el-col>
-        </el-row>
-      </el-col>
-           <el-col :span="7" class="book-item">
-        <el-row>
-          <el-col :span="6">
-            <el-image
-              class="novel-image"
-              style="width: 72px; height: 96px"
-              src="https://bookcover.yuewen.com/qdbimg/349573/c_22139735609273504/90"
-              fit="fit"
-            ></el-image>
-          </el-col>
-          <el-col :span="16" :offset="1" style="height:100px">
-            <p class="novel-description">
-              <a href="/detail" style="text-decoration:none; color:black">
-                <div class="novel-name">替嫁医妃：王爷起来喝药了ssssssssss</div>
-              </a>
-            </p>
-            <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：张三
-            </p>
-            <div class="hidden-if-beyond">傅平安是个平凡的老百姓，但他的人生从十八岁那年起就变得传奇起来，风雨过后见彩虹，好人都一生平安。ssssss</div>
+            <div class="hidden-if-beyond">{{ item.description }}</div>
           </el-col>
         </el-row>
       </el-col>
@@ -149,7 +35,28 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      bookList: []
+    };
+  },
+  methods: {
+    // 获取首页猜你喜欢小说列表
+    getRecommendBookList() {
+      this.$http.get("/home/book/recommend").then(result => {
+        let rs = result.data;
+        if (rs.code == 0) {
+          console.log("猜你喜欢：", rs.data);
+          this.bookList = rs.data;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.getRecommendBookList();
+  }
+};
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@
     <el-row>
       <!-- 小说封面图片 -->
       <el-col :span="5" class="noval-image">
-        <el-image style="width: 180px; height: 245px;  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);" src="https://bookcover.yuewen.com/qdbimg/349573/c_22109307301720304/180" fit="fit"></el-image>
+        <el-image style="width: 180px; height: 245px;  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);" src="http://r.m.biqu5200.net/cover/aHR0cDovL3FpZGlhbi5xcGljLmNuL3FkYmltZy8zNDk1NzMvMTAwMzY5NDMzMy8xODA=" fit="fit"></el-image>
       </el-col>
       <!-- 小说信息 -->
       <el-col :span="9" class="novel-description" style="height:250px">

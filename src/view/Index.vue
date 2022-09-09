@@ -18,8 +18,8 @@
       <el-col :span="20" :offset="2" class="content">
         <router-view></router-view>
       </el-col>
-            <el-col :span="20" :offset="2" class="bottom">
-              <index-bottom></index-bottom>
+      <el-col :span="20" :offset="2" class="bottom">
+        <index-bottom></index-bottom>
       </el-col>
     </el-row>
   </div>
