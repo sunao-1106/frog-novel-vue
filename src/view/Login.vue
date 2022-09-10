@@ -58,11 +58,15 @@
 </template>
 
 <script>
+import { setToken } from "../utils/cookeisutils";
 export default {
   name: "Login",
   data() {
     return {
-      user: {},
+      user: {
+        username: "",
+        password: "",
+      },
       value1: true,
       value2: true,
       rules: {
@@ -89,26 +93,25 @@ export default {
   },
   methods: {
     login() {
-      //登录函数
-       this.$refs['userForm'].validate((valid) => {
-                        if (valid) {
-                                //只有不为空在发送请求   不然浪费资源
-                            this.request.post("/user/login",this.user).then(res => {
-                                if (res.code="200") {
-
-                                    localStorage.setItem("user",JSON.stringify(res.data))  //存储用户信息到浏览器
-
-                                    this.$router.push("/index")
-                                    this.$message.success("登录成功")
-                                }else {
-                                    this.$message.error(res.msg)
-                                }
-                            })
-
-                        } else {
-                            return false;
-                        }
-                    });
+      this.$http({
+        method: "post",
+        url: "user/login",
+        data: {
+          username: this.user.username,
+          password: this.user.password,
+        },
+      }).then((result) => {
+        if (result.data.code == 0) {
+          //如果成功那么就吧 token 存放在 cookeis 中
+          setToken(result.data.token);
+          //登录成功跳转主页
+          this.$router.push({ path: "/" });
+          this.$message({
+            message: "登录成功",
+            type: "success",
+          });
+        }
+      });
     },
   },
 };
@@ -121,5 +124,4 @@ export default {
   background-image: linear-gradient(to bottom right, #f6f6f6, #f9f9f9);
   overflow: hidden;
 }
-
 </style>
