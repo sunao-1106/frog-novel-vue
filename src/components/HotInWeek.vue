@@ -3,73 +3,19 @@
     <!-- 本周最热 -->
     <el-row>
       <el-col style="margin:0px 0px 10px 0px">
-        <b style="font-size:25px">本周点击榜</b>
+        <b style="font-size:25px">本周热度榜</b>
       </el-col>
       <hr />
       <el-col>
         <div>
           <table>
-            <tr>
+            <tr v-for="(item, index) in bookList" :key="index">
               <td>
-                <b>1</b>
+                <b>{{index + 1}}</b>
               </td>
               <td>
-                <div>替嫁医妃：王爷起来喝药了sssss</div>
+                <div><router-link :to="'/detail/' + item.id">{{item.bookName}}</router-link></div>
               </td>
-            </tr>
-            <tr>
-              <td>
-                <b>2</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>3</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>4</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>5</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>6</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>7</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>8</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>9</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
-            </tr>
-            <tr>
-              <td>
-                <b>10</b>
-              </td>
-              <td>替嫁医妃：王爷起来喝药了</td>
             </tr>
           </table>
         </div>
@@ -79,7 +25,28 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      bookList: []
+    }
+  },
+  methods: {
+    // 获取首页本周热度榜小说列表
+    getHotBookInWeekList() {
+      this.$http.get("/home/book/week").then(result => {
+        let rs = result.data;
+        if (rs.code == 0) {
+          console.log("本周热度榜：", rs.data);
+          this.bookList = rs.data;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.getHotBookInWeekList();
+  }
+};
 </script>
 
 <style scoped>
@@ -110,5 +77,12 @@ td div {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 175px;
+}
+td a {
+  color:black;
+  text-decoration: none;
+}
+td a:hover {
+  color: #5ba4e9;
 }
 </style>

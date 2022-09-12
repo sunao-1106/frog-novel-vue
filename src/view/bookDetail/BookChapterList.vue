@@ -3,10 +3,15 @@
     <el-row>
       <el-col style="margin:10px 0px 10px 5px">
         <span style="font-size:20px;">
-          <b>正文:共162卷</b>
+          <b>正文:共{{chapterListTemp.length}}卷</b>
         </span>
       </el-col>
-      <el-col :span="6" style="margin:15px 0px 0px 0px" v-for="(item, index) in chapters" :key="index">
+      <el-col
+        :span="6"
+        style="margin:15px 0px 0px 0px"
+        v-for="(item, index) in chapterListTemp"
+        :key="index"
+      >
         <a href="#">
           <div class="chapter-name">
             <el-tag type="success" effect="plain" size="mini" v-if="item.isFree == 0">免费</el-tag>
@@ -23,157 +28,22 @@
 export default {
   data() {
     return {
-      chapters: [
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 0
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        },
-        {
-          chapterName: "第一卷 第一章 魔法师之国 [免费]",
-          isFree: 1
-        }
-      ]
+      chapterListTemp: []
     };
+  },
+  props: {
+    // 接收父组件传递过来的值 这里传递的是引用 子组件的修改会直接影响到父组件的值
+    chapterList: Array
+  },
+  watch: {
+    chapterList: {
+      deep: true,
+      handler: function(newVal, oldVal) {
+        this.$nextTick(() => {
+          this.chapterListTemp = newVal;
+        });
+      }
+    }
   }
 };
 </script>

@@ -23,7 +23,7 @@
               </a>
             </td>
             <td>
-              <a href>
+              <a >
                 <div style="width:260px;">{{ item.bookName }}</div>
               </a>
             </td>

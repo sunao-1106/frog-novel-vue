@@ -8,25 +8,30 @@
       <el-col :span="10" class="book-item" v-for="(item, index) in bookList" :key="index">
         <el-row>
           <el-col :span="6">
-            <el-image
-              style="width: 72px; height: 96px"
-              :src="item.image"
-              fit="fit"
-              class="novel-image"
-            ></el-image>
+            <router-link :to="'/detail/' + item.id">
+              <el-image
+                style="width: 72px; height: 96px"
+                :src="item.image"
+                fit="fit"
+                class="novel-image"
+              ></el-image>
+            </router-link>
           </el-col>
           <el-col :span="16" :offset="1" style="height:100px">
             <p class="novel-description">
-              <a href="#" style="text-decoration:none; color:black">
+              <router-link
+                :to="'/detail/' + item.id"
+                href="#"
+                style="text-decoration:none; color:black"
+              >
                 <div class="novel-name">{{ item.bookName }}</div>
-              </a>
+              </router-link>
             </p>
             <p style="font-size:10px;color:#a6a6a6">
-              <i class="el-icon-user"></i>：{{ item.authorName }}
+              <i class="el-icon-user"></i>
+              ：{{ item.authorName }}
             </p>
-            <div
-              class="hidden-if-beyond"
-            >{{ item.description }}</div>
+            <div class="hidden-if-beyond">{{ item.description }}</div>
           </el-col>
         </el-row>
       </el-col>
@@ -38,8 +43,8 @@ export default {
   data() {
     return {
       bookList: []
-    }
-  }, 
+    };
+  },
   methods: {
     // 获取首页猜你喜欢小说列表
     getSelectBookList() {

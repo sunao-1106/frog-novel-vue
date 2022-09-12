@@ -63,17 +63,9 @@ export default new Router({
 
         {
           //小说详细页
-          path: "/detail",
+          path: "/detail/:id",
           name: 'detail',
           component: () => import('@/view/bookDetail/BookDetail'),
-          redirect: "/chapter",
-          children: [
-            {
-              path: '/chapter',
-              name: 'Chapter',
-              component: () => import('@/view/bookDetail/BookChapterList')
-            }
-          ]
         }
       ]
     }
