@@ -105,11 +105,17 @@ export default {
           //如果成功那么就吧 token 存放在 cookeis 中
           setToken(result.data.token);
           //登录成功跳转主页
-          this.$router.push({ path: "/" });
+          this.$router.push({ path: "/index" });
+          //刷新页面 重新判断 导航栏
+          this.$router.go();
           this.$message({
             message: "登录成功",
             type: "success",
           });
+        }else{
+          //后端出现错误
+          this.$message.error(result.data.msg);  
+          //console.log(result.data.msg);        
         }
       });
     },
