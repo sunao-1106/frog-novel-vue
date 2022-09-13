@@ -21,13 +21,19 @@
       </el-col>
       <!-- 登录、注册、我的书架 -->
       <el-col :span="5" :offset="18" class="header-link">
-        <router-link to="/login">
-          <el-link class="link-a" href="/login" target="_blank">
+        <!-- 在登录成功后 隐藏登录显示退出 -->
+        <router-link to="/login" >
+          <el-link v-show="show" class="link-a" href="/login" target="_blank">
             <b>登录</b>
           </el-link>
         </router-link>
+        <router-link to="/index" >
+          <el-link v-show="!show" class="link-a" href="/index" target="_blank" >
+            <b @click="outlogin">退出登录</b>
+          </el-link>
+        </router-link>
         <router-link to="/register">
-          <el-link class="link-a" href="/reagister" target="_blank">
+          <el-link v-show="show" class="link-a" href="/reagister" target="_blank">
             <b>注册</b>
           </el-link>
         </router-link>
@@ -55,11 +61,45 @@
 </template>
 
 <script>
+import {getToken,removeToken} from '../utils/cookeisutils'
 export default {
   data() {
     return {
-      input: ""
+      input: "",
+      show: true
     };
+  },
+  methods: {
+    outlogin(){
+        console.log("退出登录命令执行");
+        //发送退出命令 , 删除reids 缓存
+        // this.$http({
+        //  method: "get",
+        //  url: "user/outLogin",
+        // }).then((result)=>{
+        //清除 token
+        removeToken()
+        // console.log(result);
+           //显示登录
+        this.show=!this.show
+        //显示成功
+        this.$message({
+        message: "退出成功",
+        type: "success",
+          });
+        // })
+
+ 
+    },
+  },
+  //加载页面时判断是否登录
+  created(){
+     console.log("加载时创建");
+    //检查cookeis 如果cookies 里面存放着token 那么就判断已经登录
+     if(getToken()!=null){
+         //判断已经登录就隐藏掉登录按钮，显示退出按钮
+         this.show= false
+     }
   }
 };
 </script>
