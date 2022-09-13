@@ -58,18 +58,22 @@
 </template>
 
 <script>
+import { setToken } from "../utils/cookeisutils";
 export default {
   name: "Login",
   data() {
     return {
-      user: {},
+      user: {
+        username: "",
+        password: "",
+      },
       value1: true,
       value2: true,
       rules: {
         username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
           {
-            min: 3,
+            min: 2,
             max: 10,
             message: "长度在 3 到 10 个字符",
             trigger: "blur",
@@ -89,7 +93,31 @@ export default {
   },
   methods: {
     login() {
-      //登录函数
+      this.$http({
+        method: "post",
+        url: "user/login",
+        data: {
+          username: this.user.username,
+          password: this.user.password,
+        },
+      }).then((result) => {
+        if (result.data.code == 0) {
+          //如果成功那么就吧 token 存放在 cookeis 中
+          setToken(result.data.token);
+          //登录成功跳转主页
+          this.$router.push({ path: "/index" });
+          //刷新页面 重新判断 导航栏
+          this.$router.go();
+          this.$message({
+            message: "登录成功",
+            type: "success",
+          });
+        }else{
+          //后端出现错误
+          this.$message.error(result.data.msg);  
+          //console.log(result.data.msg);        
+        }
+      });
     },
   },
 };
@@ -102,5 +130,4 @@ export default {
   background-image: linear-gradient(to bottom right, #f6f6f6, #f9f9f9);
   overflow: hidden;
 }
-
 </style>
