@@ -10,6 +10,7 @@ import axios from 'axios';
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false
 axios.defaults.baseURL = "http://localhost:88/api"
+axios.defaults.withCredentials=true  //开启发送cookie
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
