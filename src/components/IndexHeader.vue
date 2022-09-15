@@ -38,7 +38,7 @@
           </el-link>
         </router-link>
         <router-link to="/user/book">
-          <el-link class="link-a" target="_blank">
+          <el-link v-show="!show" class="link-a" target="_blank">
             <i class="el-icon-collection" style="color:#409eff"></i>
             <b>我的书架</b>
           </el-link>
@@ -73,10 +73,10 @@ export default {
     outlogin(){
         console.log("退出登录命令执行");
         //发送退出命令 , 删除reids 缓存
-        // this.$http({
-        //  method: "get",
-        //  url: "user/outLogin",
-        // }).then((result)=>{
+        this.$http({
+         method: "get",
+         url: "user/outLogin",
+        }).then((result)=>{
         //清除 token
         removeToken()
         // console.log(result);
@@ -87,19 +87,26 @@ export default {
         message: "退出成功",
         type: "success",
           });
-        // })
-
- 
+        })
     },
   },
-  //加载页面时判断是否登录
+
+
+//加载页面时判断是否登录
   created(){
-     console.log("加载时创建");
-    //检查cookeis 如果cookies 里面存放着token 那么就判断已经登录
-     if(getToken()!=null){
+    //如果页面刷新的话window.performance.navigation.type的值为1，如果值不是1就证明页面首次加载
+    if (window.performance.navigation.type === 1) {
+        //检查cookeis 如果cookies 里面存放着token 那么就判断已经登录
+        if(getToken()!=null){
          //判断已经登录就隐藏掉登录按钮，显示退出按钮
          this.show= false
      }
+     // console.log('页面刷新')
+    } else {
+     // console.log('页面首次加载');
+
+
+    }
   }
 };
 </script>

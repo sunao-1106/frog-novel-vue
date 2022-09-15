@@ -1,23 +1,24 @@
 <template>
   <div class="user-center">
+    <div style="height: 15px"></div>
     <el-row>
       <el-col :span="4">
         <el-avatar
           :size="80"
-          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+          src= this.userVo.avatar
         ></el-avatar>
       </el-col>
       <el-col :span="9">
         <div>
           <span>
-            <p>小孙</p>
+            <p>{{userVo.nickname}}</p>
           </span>
-          <span>
+          <span v-show="this.show">
             <el-tag type="danger" size="mini">
               <b>VIP</b>
             </el-tag>
           </span>
-          <span style="font-size:10px">2019.10.06到期</span>
+          <span style="font-size:10px">{{userVo.payAmount}}</span>
           <span>
             <el-link type="primary" style="font-size:10px">立即续费</el-link>
           </span>
@@ -25,7 +26,10 @@
       </el-col>
       <el-col>
         <div class="read-history">
+          <div style="text-align: center">
           <span style="font-size:20px;">浏览历史</span>
+          </div>
+
           <hr />
           <table class="read-history-table" style="border-collapse:collapse">
             <tr>
@@ -66,6 +70,17 @@
 export default {
   data() {
     return {
+      //用户信息
+      userVo:{
+        nickname: "aaa",
+        avatar: "",
+        vip: false,
+        payAmount: ""
+      },
+      
+      show:false,
+      name:"",
+      //浏览历史
       readHistory: [
         {
           categroyName: "武侠小说",
@@ -78,64 +93,39 @@ export default {
           bookName: "仙剑奇侠传",
           preContentId: "第十六章 强强来了",
           updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
-        },
-        {
-          categroyName: "武侠小说",
-          bookName: "仙剑奇侠传",
-          preContentId: "第十六章 强强来了",
-          updateTime: "2019-10-09"
         }
+      
       ]
     };
-  }
+  },
+  //页面创建时请求页面资源
+  created () {
+        //个人信息
+        this.$http({
+         method: "get",
+         url: "user/UserInfo",
+        }).then((result)=>{
+            console.log("====="+result.data.vip);
+            console.log(result.data.os);
+             this.userVo.nickname = result.data.nickname
+             this.userVo.avatar = result.data.avatar,
+             this.userVo.payAmount = result.data.payAmount
+            //  等于0就是会员
+             if(result.data.vip==0){
+                this.show=true
+             }else{
+                this.show=false
+             }
+        })
+        //个人浏览历史
+        // this.$http({
+        //   method: "get",
+        //   url: "user/bookHistory"
+        // }).then((result)=>{
+        //   //填充数据
+        //   result.data
+        // })
+  },
 };
 </script>
 
