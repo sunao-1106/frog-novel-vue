@@ -12,13 +12,25 @@
         v-for="(item, index) in chapterListTemp"
         :key="index"
       >
-        <a href="#">
+        <!-- <router-link :to="'/content/' + item.id" >
           <div class="chapter-name">
             <el-tag type="success" effect="plain" size="mini" v-if="item.isFree == 0">免费</el-tag>
             <el-tag type="danger" effect="plain" size="mini" v-else-if="item.isFree == 1">VIP</el-tag>
             {{ item.chapterName }}
           </div>
-        </a>
+        </router-link>-->
+
+        <div class="chapter-name">
+          <router-link :to="'/free/content/' + item.id" v-if="item.isFree == 0">
+            <el-tag type="success" effect="plain" size="mini">免费</el-tag>
+              {{ item.chapterName }}
+          </router-link>
+          <router-link :to="'/vip/content/' + item.id" v-else-if="item.isFree == 1">
+            <el-tag type="danger" effect="plain" size="mini">VIP</el-tag>
+              {{ item.chapterName }}
+          </router-link>
+        
+        </div>
       </el-col>
     </el-row>
   </div>

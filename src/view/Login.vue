@@ -95,13 +95,14 @@ export default {
     login() {
       this.$http({
         method: "post",
-        url: "user/login",
+        url: "user/auth/login",
         data: {
           username: this.user.username,
           password: this.user.password,
         },
       }).then((result) => {
         if (result.data.code == 0) {
+          console.log("token:", result.data.token)
           //如果成功那么就吧 token 存放在 cookeis 中
           setToken(result.data.token);
           //登录成功跳转主页
