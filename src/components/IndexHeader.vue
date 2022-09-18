@@ -47,12 +47,12 @@
       <!-- 头部导航栏 -->
       <el-col :span="24" class="header-navigation">
 
-        <a href="/">首页</a>
+        <router-link to="/">首页</router-link>
 
-        <a href="/all">全部小说</a>
-        <a href="#">排行榜</a>
-        <a href="#">免费小说</a>
-        <a href="#">完本小说</a>
+        <router-link to="/all">全部小说</router-link>
+        <router-link to="#">排行榜</router-link>
+        <router-link to="#">免费小说</router-link>
+        <router-link to="#">完本小说</router-link>
         <br />
         <hr style="border:3px #5ba4e9 solid" />
       </el-col>

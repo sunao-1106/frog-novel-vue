@@ -35,7 +35,9 @@
       <el-col :span="20">
         <div class="book-content" :style="'background-color:' + computedBackgroundColor ">
           <div class="chapter-content">
-            <p :style="'font-size:30px;color:' + computedFontColor">{{ chapterContentInfo.chapterName }}</p>
+            <p
+              :style="'font-size:30px;color:' + computedFontColor"
+            >{{ chapterContentInfo.chapterName }}</p>
             <p>
               <span>分类：待添加</span>
               <span>作者：{{ chapterContentInfo.authorName }}</span>
@@ -126,9 +128,6 @@ export default {
           if (rs.code === 0) {
             // 封装信息
             this.setChapterContentInfo(rs.data);
-          } else if (rs.code === 1009) {
-              // 提示用户请充值会员
-               alert("请充值会员哟~");
           }
         });
       }
@@ -136,27 +135,27 @@ export default {
         this.$http.get("/book/chapter" + uri).then(result => {
           let rs = result.data;
           if (rs.code === 0) {
-             // 封装信息
+            // 封装信息
             this.setChapterContentInfo(rs.data);
-          } else if (rs.code === 1006) {
-            // 非法访问
-            alert(rs.msg);
           }
         });
       }
     },
     setChapterContentInfo(data) {
-        this.chapterContentInfo.chapterId = data.chapterId;
-        this.chapterContentInfo.authorName = data.authorName;
-        this.chapterContentInfo.categoryName = data.categoryName;
-        this.chapterContentInfo.chapterName = data.chapterName;
-        this.chapterContentInfo.createTime = data.createTime;
-         this.chapterContentInfo.isFree = data.isFree;
-        // 将章节内容转化为一个数组 每一行对应一个数组项
-        // 首先截取文章内容的 []
-        let temp = data.chapterContent.substring(data.chapterContent.indexOf("[")+1, data.chapterContent.indexOf("]")-1);
-        this.chapterContentInfo.chapterContent = temp.split("/");
-        console.log("chapterContentInfo", this.chapterContentInfo);
+      this.chapterContentInfo.chapterId = data.chapterId;
+      this.chapterContentInfo.authorName = data.authorName;
+      this.chapterContentInfo.categoryName = data.categoryName;
+      this.chapterContentInfo.chapterName = data.chapterName;
+      this.chapterContentInfo.createTime = data.createTime;
+      this.chapterContentInfo.isFree = data.isFree;
+      // 将章节内容转化为一个数组 每一行对应一个数组项
+      // 首先截取文章内容的 []
+      let temp = data.chapterContent.substring(
+        data.chapterContent.indexOf("[") + 1,
+        data.chapterContent.indexOf("]") - 1
+      );
+      this.chapterContentInfo.chapterContent = temp.split("/");
+      console.log("chapterContentInfo", this.chapterContentInfo);
     }
   },
   computed: {
